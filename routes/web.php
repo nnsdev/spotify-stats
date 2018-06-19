@@ -13,4 +13,4 @@
 
 Route::get('/', 'SpotifyController@index');
 Route::get('/callback', 'SpotifyController@callback');
-Route::get('/dashboard/{token}', 'SpotifyController@dashboard');
+Route::get('/dashboard', 'SpotifyController@dashboard');

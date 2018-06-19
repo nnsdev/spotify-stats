@@ -36,12 +36,13 @@ class SpotifyController extends Controller
     public function callback(Request $request)
     {
         $this->session->requestAccessToken($request->get('code'));
-        return redirect('/dashboard/' . $this->session->getAccessToken());
+        $request->session()->put('token', $this->session->getAccessToken());
+        return redirect('/dashboard');
     }
 
-    public function dashboard($token)
+    public function dashboard()
     {
-        $this->api->setAccessToken($token);
+        $this->api->setAccessToken(\Session::get('token'));
         return view('welcome', [
             'artists' => [
                 'long_term' => $this->api->getMyTop('artists', [
