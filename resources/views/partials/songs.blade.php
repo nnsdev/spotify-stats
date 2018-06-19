@@ -4,7 +4,7 @@
         {{ $loop->index + 1 }}
     </div>
     <div class="col-md-1">
-        <img src="{{ $song->album->images[2]->url }}" alt="{{ $song->name }}" style="width: 50px; height: 50px;">
+        <img src="{{ $song->album->images[2]->url ?? $song->album->images[0]->url }}" alt="{{ $song->name }}" style="width: 50px; height: 50px;">
     </div>
     <div class="col-md-6 ml-1 align-self-center">
         <h4>
