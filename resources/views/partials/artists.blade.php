@@ -1,5 +1,19 @@
+<p class="mt-4">
+  <a class="btn btn-primary" data-toggle="collapse" href="#export-artist-{{ $range_title }}" role="button" aria-expanded="false" aria-controls="export-artist-{{ $range_title }}">Export</a>
+</p>
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="export-artist-{{ $range_title }}">
+      <div class="card card-body">
+        @foreach($range as $artist)
+        {{ $loop->index + 1}}. {{ $artist->name }}<br>
+        @endforeach
+      </div>
+    </div>
+  </div>
+</div>
 @foreach($range as $artist)
-<div class="row @if($loop->first) mt-4 @else mt-1 @endif">
+<div class="row mt-1">
     <div class="col-md-1">
         {{ $loop->index + 1 }}
     </div>

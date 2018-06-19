@@ -43,13 +43,13 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="artist-short" role="tabpanel" aria-labelledby="artist-short-tab">
-                                @include('partials.artists', ['range' => $artists['short_term']])
+                                @include('partials.artists', ['range_title' => 'short_term', 'range' => $artists['short_term']])
                             </div>
                             <div class="tab-pane fade" id="artist-mid" role="tabpanel" aria-labelledby="artist-mid-tab">
-                                @include('partials.artists', ['range' => $artists['mid_term']])
+                                @include('partials.artists', ['range_title' => 'mid_term', 'range' => $artists['mid_term']])
                             </div>
                             <div class="tab-pane fade" id="artist-long" role="tabpanel" aria-labelledby="artist-long-tab">
-                                @include('partials.artists', ['range' => $artists['long_term']])
+                                @include('partials.artists', ['range_title' => 'long_term', 'range' => $artists['long_term']])
                             </div>
                         </div>
                     </div>
@@ -92,13 +92,13 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="song-short" role="tabpanel" aria-labelledby="song-short-tab">
-                                @include('partials.songs', ['range' => $songs['short_term']])
+                                @include('partials.songs', ['range_title' => 'short_term', 'range' => $songs['short_term']])
                             </div>
                             <div class="tab-pane fade" id="song-mid" role="tabpanel" aria-labelledby="song-mid-tab">
-                                @include('partials.songs', ['range' => $songs['mid_term']])
+                                @include('partials.songs', ['range_title' => 'mid_term', 'range' => $songs['mid_term']])
                             </div>
                             <div class="tab-pane fade" id="song-long" role="tabpanel" aria-labelledby="song-long-tab">
-                                @include('partials.songs', ['range' => $songs['long_term']])
+                                @include('partials.songs', ['range_title' => 'long_term', 'range' => $songs['long_term']])
                             </div>
                         </div>
                     </div>
