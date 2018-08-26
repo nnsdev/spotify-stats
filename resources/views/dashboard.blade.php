@@ -19,10 +19,10 @@
         <div class="bg-blue-darker text-white xs:p-2 md:p-8">
             <h1>Your favorite Artists in the past 4 Weeks</h1>
             <div class="mt-2 md:p-8 mx-auto">
-                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" class="md:pl-8" :pagination-padding="2" :pagination-size="8">
+                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" :pagination-padding="2" :pagination-size="8">
                     @foreach($artists['short_term'] as $artist)
                     <slide>
-                        <img src="{{ $artist->images[2]->url ?? $artist->images[0]->url }}" alt="{{ $artist->name }}" style="width: 175px; height: 175px;">
+                        <img src="{{ getPicture($artist->images) }}" alt="{{ $artist->name }}" class="xs:h-32 xs:w-32 md:h-48 md:w-48">
                         <h3 class="mt-2">{{ $loop->index + 1 }}. {{ $artist->name }}</h3>
                     </slide>
                     @endforeach
@@ -37,10 +37,10 @@
         <div class="bg-green-dark text-white xs:p-2 md:p-8">
             <h1>Your favorite Songs in the past 4 Weeks</h1>
             <div class="mt-2 md:p-8 mx-auto">
-                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" class="md:pl-8" :pagination-padding="2">
+                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" :pagination-padding="2">
                     @foreach($songs['short_term'] as $song)
                     <slide>
-                        <img src="{{ $song->album->images[2]->url ?? $song->album->images[0]->url }}" alt="{{ $song->name }}" style="width: 175px; height: 175px;">
+                        <img src="{{ getPicture($song->album->images) }}" alt="{{ $song->name }}" class="xs:h-32 xs:w-32 md:h-48 md:w-48">
                         <h3 class="mt-2">{{ $loop->index +1 }}. {{ $song->name }}</h3>
                         <p>@foreach($song->artists as $artist) {{ $artist->name }}@if(!$loop->last),@endif @endforeach</p>
                     </slide>
@@ -56,10 +56,10 @@
         <div class="bg-purple text-white xs:p-2 md:p-8">
             <h1>Your favorite Artists in the past 6 Months</h1>
             <div class="mt-2 md:p-8 mx-auto">
-                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" class="md:pl-8" :pagination-padding="2">
+                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" :pagination-padding="2">
                     @foreach($artists['mid_term'] as $artist)
                     <slide>
-                        <img src="{{ $artist->images[2]->url ?? $artist->images[0]->url }}" alt="{{ $artist->name }}" style="width: 175px; height: 175px;">
+                        <img src="{{ getPicture($artist->images) }}" alt="{{ $artist->name }}" class="xs:h-32 xs:w-32 md:h-48 md:w-48">
                         <h3 class="mt-2">{{ $loop->index + 1 }}. {{ $artist->name }}</h3>
                     </slide>
                     @endforeach
@@ -74,10 +74,10 @@
         <div class="bg-teal text-white xs:p-2 md:p-8">
             <h1>Your favorite Songs in the past 6 Months</h1>
             <div class="mt-2 md:p-8 mx-auto">
-                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" class="md:pl-8" :pagination-padding="2">
+                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" :pagination-padding="2">
                     @foreach($songs['mid_term'] as $song)
                     <slide>
-                        <img src="{{ $song->album->images[2]->url ?? $song->album->images[0]->url }}" alt="{{ $song->name }}" style="width: 175px; height: 175px;">
+                        <img src="{{ getPicture($song->album->images) }}" alt="{{ $song->name }}" class="xs:h-32 xs:w-32 md:h-48 md:w-48">
                         <h3 class="mt-2">{{ $loop->index +1 }}. {{ $song->name }}</h3>
                         <p>@foreach($song->artists as $artist) {{ $artist->name }}@if(!$loop->last),@endif @endforeach</p>
                     </slide>
@@ -93,10 +93,10 @@
         <div class="bg-red text-white xs:p-2 md:p-8">
             <h1>Your favorite Artists all-time</h1>
             <div class="mt-2 md:p-8 mx-auto">
-                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" class="md:pl-8" :pagination-padding="2">
+                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" :pagination-padding="2">
                     @foreach($artists['long_term'] as $artist)
                     <slide>
-                        <img src="{{ $artist->images[2]->url ?? $artist->images[0]->url }}" alt="{{ $artist->name }}" style="width: 175px; height: 175px;">
+                        <img src="{{ getPicture($artist->images) }}" alt="{{ $artist->name }}" class="xs:h-32 xs:w-32 md:h-48 md:w-48">
                         <h3 class="mt-2">{{ $loop->index + 1 }}. {{ $artist->name }}</h3>
                     </slide>
                     @endforeach
@@ -111,10 +111,10 @@
         <div class="bg-orange-dark text-white xs:p-2 md:p-8">
             <h1>Your favorite Songs all-time</h1>
             <div class="mt-2 md:p-8 mx-auto">
-                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" class="md:pl-8" :pagination-padding="2">
+                <carousel :per-page-custom="[[0,1],[500,2],[700,3],[1000,4],[1300,5]]" :pagination-padding="2">
                     @foreach($songs['long_term'] as $song)
                     <slide>
-                        <img src="{{ $song->album->images[2]->url ?? $song->album->images[0]->url }}" alt="{{ $song->name }}" style="width: 175px; height: 175px;">
+                        <img src="{{ getPicture($song->album->images) }}" alt="{{ $song->name }}" class="xs:h-32 xs:w-32 md:h-48 md:w-48">
                         <h3 class="mt-2">{{ $loop->index +1 }}. {{ $song->name }}</h3>
                         <p>@foreach($song->artists as $artist) {{ $artist->name }}@if(!$loop->last),@endif @endforeach</p>
                     </slide>
