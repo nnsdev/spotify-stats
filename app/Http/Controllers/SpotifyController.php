@@ -43,7 +43,7 @@ class SpotifyController extends Controller
     public function dashboard()
     {
         $this->api->setAccessToken(\Session::get('token'));
-        return view('welcome', [
+        return view('dashboard', [
             'artists' => [
                 'long_term' => $this->api->getMyTop('artists', [
                     'time_range' => 'long_term', 'limit' => '50',

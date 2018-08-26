@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2fe4168385e840f17fbf953f069d87f",
+    "content-hash": "5e1a90e2c32ac52c1e5a32b1eb9c167f",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2337,6 +2337,50 @@
     ],
     "packages-dev": [
         {
+            "name": "adamwathan/laravel-preset",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamwathan/laravel-preset.git",
+                "reference": "6fb49498754e8031c9927452747a62111a4bb4a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamwathan/laravel-preset/zipball/6fb49498754e8031c9927452747a62111a4bb4a1",
+                "reference": "6fb49498754e8031c9927452747a62111a4bb4a1",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.5|^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "NothingWorks\\LaravelPreset\\PresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NothingWorks\\LaravelPreset\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Adam Wathan's Laravel Frontend Preset",
+            "keywords": [
+                "laravel",
+                "preset"
+            ],
+            "support": {
+                "source": "https://github.com/adamwathan/laravel-preset/tree/master",
+                "issues": "https://github.com/adamwathan/laravel-preset/issues"
+            },
+            "time": "2018-06-27T11:55:51+00:00"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.1.0",
             "source": {
@@ -4032,7 +4076,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "adamwathan/laravel-preset": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
