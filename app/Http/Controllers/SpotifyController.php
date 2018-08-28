@@ -29,6 +29,7 @@ class SpotifyController extends Controller
             'scope' => [
                 'user-read-email',
                 'user-top-read',
+                'playlist-modify-public',
             ],
         ]));
     }
@@ -67,5 +68,36 @@ class SpotifyController extends Controller
                 ])->items,
             ],
         ]);
+    }
+    
+    protected function readable($term)
+    {
+        switch($term) {
+            case "short_term":
+                return "in the past Month";
+            case "mid_term":
+                return "in the past 6 Months";
+            default:
+                return "of all time";
+        }
+    }
+
+    public function createPlaylist($term)
+    {
+        if(!in_array($term, ['short_term', 'mid_term', 'long_term'])) {
+            $term = 'long_term';
+        }
+        $this->api->setAccessToken(\Session::get('token'));
+        $songs = collect($this->api->getMyTop('tracks', [
+            'time_range' => $term, 'limit' => 50,
+        ])->items)->map(function ($song) {
+            return $song->uri;
+        });
+        $playlist = $this->api->createPlaylist([
+            'name' => 'My Top Tracks '.$this->readable($term),
+            'description' => 'Stats as of '.now()->format("d/m/y").'. Made By NNS\' Spotify Stats website: https://spotify.whatan.app'
+        ]);
+        $this->api->addPlaylistTracks($playlist->id, $songs->toArray());
+        return redirect()->back();
     }
 }

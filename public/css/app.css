@@ -6349,6 +6349,25 @@ table {
 
 /* Add custom utilities here... */
 
+.btn {
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 1px;
+  border-color: #fff;
+  border-radius: .25rem;
+}
+
+.btn:hover {
+  background-color: #fff;
+  border-color: transparent;
+}
+
 @media (min-width: 0px) {
   .xs\:list-reset {
     list-style: none;

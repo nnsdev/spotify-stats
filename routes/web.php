@@ -13,4 +13,8 @@
 
 Route::get('/', 'SpotifyController@index');
 Route::get('/callback', 'SpotifyController@callback');
-Route::get('/dashboard', 'SpotifyController@dashboard');
+
+Route::group(['middleware' => 'token'], function () {
+    Route::get('/dashboard', 'SpotifyController@dashboard');
+    Route::get('playlist/create/{term}', 'SpotifyController@createPlaylist');
+});
