@@ -15,3 +15,9 @@
 .btn:hover {
     @apply bg-white border-transparent;
 }
+.nav-link {
+    @apply flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center;
+}
+.nav-link:hover {
+    @apply bg-grey-darkest;
+}

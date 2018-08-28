@@ -17,4 +17,9 @@ Route::get('/callback', 'SpotifyController@callback');
 Route::group(['middleware' => 'token'], function () {
     Route::get('/dashboard', 'SpotifyController@dashboard');
     Route::get('playlist/create/{term}', 'SpotifyController@createPlaylist');
+
+    Route::get('/logout', function () {
+        \Session::forget('\token');
+        return view('logout');
+    });
 });

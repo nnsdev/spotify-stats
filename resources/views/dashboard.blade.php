@@ -12,8 +12,9 @@
     <div id="app">
         <nav class="relative select-none bg-black lg:flex lg:items-stretch w-full">
             <div class="flex flex-no-shrink items-stretch h-12">
-                <a href="/" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-darkest font-bold text-2xl">Spotify Stats</a>
-                <a href="https://gelmar.app" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-darkest">Gelmar.app</a>
+                <a href="/" class="nav-link font-bold text-2xl">Spotify Stats</a>
+                <a href="/logout" class="nav-link">Logout</a>
+                <a href="https://gelmar.app" class="nav-link">Gelmar.app</a>
             </div>
         </nav>
         <div class="bg-blue-darker text-white xs:p-2 md:p-8">
