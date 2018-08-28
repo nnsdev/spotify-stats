@@ -8,7 +8,7 @@
         @endforeach
     </carousel>
     <div class="text-center mt-8">
-        <button @click="show('artist_long')" class="btn hover:text-{{ $color }}">
+        <button @click="show('{{ $range }}')" class="btn hover:text-{{ $color }}">
             Copy
         </button>
     </div>

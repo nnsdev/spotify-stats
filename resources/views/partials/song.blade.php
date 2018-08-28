@@ -9,7 +9,7 @@
         @endforeach
     </carousel>
     <div class="text-center mt-8">
-        <button @click="show('song_mid')" class="btn hover:text-{{ $color }}">
+        <button @click="show('{{ $range }}')" class="btn hover:text-{{ $color }}">
             Copy
         </button>
         <a href="/playlist/create/{{ $range }}" class="btn hover:text-{{ $color }}">
