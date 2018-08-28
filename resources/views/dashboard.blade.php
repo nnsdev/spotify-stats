@@ -19,7 +19,7 @@
         </nav>
         <div class="bg-blue-darker text-white xs:p-2 md:p-8">
             <h1>Your favorite Artists in the past 4 Weeks</h1>
-            @include('partials.song', ['range' => 'short_term', 'color' => 'blue-darker'])
+            @include('partials.artist', ['range' => 'short_term', 'color' => 'blue-darker'])
         </div>
         <div class="bg-green-dark text-white xs:p-2 md:p-8">
             <h1>Your favorite Songs in the past 4 Weeks</h1>
@@ -27,7 +27,7 @@
         </div>
         <div class="bg-purple text-white xs:p-2 md:p-8">
             <h1>Your favorite Artists in the past 6 Months</h1>
-            @include('partials.song', ['range' => 'mid_term', 'color' => 'purple'])
+            @include('partials.artist', ['range' => 'mid_term', 'color' => 'purple'])
         </div>
         <div class="bg-teal text-white xs:p-2 md:p-8">
             <h1>Your favorite Songs in the past 6 Months</h1>
@@ -35,7 +35,7 @@
         </div>
         <div class="bg-red text-white xs:p-2 md:p-8">
             <h1>Your favorite Artists all-time</h1>
-            @include('partials.song', ['range' => 'long_term', 'color' => 'red'])
+            @include('partials.artist', ['range' => 'long_term', 'color' => 'red'])
         </div>
         <div class="bg-orange-dark text-white xs:p-2 md:p-8">
             <h1>Your favorite Songs all-time</h1>
