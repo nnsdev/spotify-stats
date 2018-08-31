@@ -11,7 +11,8 @@
 |
  */
 
-Route::get('/', 'SpotifyController@index');
+Route::view('/', 'welcome');
+Route::get('/login', 'SpotifyController@index');
 Route::get('/callback', 'SpotifyController@callback');
 
 Route::group(['middleware' => 'token'], function () {
@@ -20,6 +21,6 @@ Route::group(['middleware' => 'token'], function () {
 
     Route::get('/logout', function () {
         \Session::forget('\token');
-        return view('logout');
+        return redirect('/');
     });
 });
