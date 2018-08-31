@@ -21,7 +21,6 @@
         <nav class="relative select-none bg-black lg:flex lg:items-stretch w-full">
             <div class="flex flex-no-shrink items-stretch h-12">
                 <a href="/" class="nav-link font-bold text-2xl">Spotify Stats</a>
-                <a href="/logout" class="nav-link">Logout</a>
                 <a href="https://gelmar.app" class="nav-link">Gelmar.app</a>
             </div>
         </nav>
