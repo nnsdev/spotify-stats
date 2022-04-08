@@ -15,7 +15,7 @@ class TokenMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(\Session::has('token')) {
+        if(session()->has('token')) {
             return $next($request);
         }
         return redirect('/');

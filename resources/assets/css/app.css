@@ -1,4 +1,4 @@
-@import "tailwindcss/preflight";
+@import "tailwindcss/base";
 
 /* Add custom base styles here... */
 
@@ -16,8 +16,8 @@
     @apply bg-white border-transparent text-black;
 }
 .nav-link {
-    @apply flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center;
+    @apply flex-grow flex-shrink-0 relative py-2 px-4 leading-normal text-white no-underline flex items-center;
 }
 .nav-link:hover {
-    @apply bg-grey-darkest;
+    @apply bg-gray-900;
 }

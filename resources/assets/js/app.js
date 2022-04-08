@@ -6,8 +6,9 @@
  */
 
 require('./bootstrap');
+import Vue from 'vue/dist/vue.js';
 
-window.Vue = require('vue');
+window.Vue = Vue;
 import VueCarousel from 'vue-carousel'
 import VModal from 'vue-js-modal'
 

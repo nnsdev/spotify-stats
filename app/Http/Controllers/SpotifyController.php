@@ -69,7 +69,7 @@ class SpotifyController extends Controller
             ],
         ]);
     }
-    
+
     protected function readable($term)
     {
         switch($term) {
@@ -95,7 +95,7 @@ class SpotifyController extends Controller
         });
         $playlist = $this->api->createPlaylist([
             'name' => 'My Top Tracks '.$this->readable($term),
-            'description' => 'Stats as of '.now()->format("d/m/y").'. Made By NNS\' Spotify Stats website: https://spotify.whatan.app'
+            'description' => 'Stats as of '.now()->format("d/m/y").'. Made By NNS\' Spotify Stats website: https://spotify.malding.dev'
         ]);
         $this->api->addPlaylistTracks($playlist->id, $songs->toArray());
         return redirect()->back();
